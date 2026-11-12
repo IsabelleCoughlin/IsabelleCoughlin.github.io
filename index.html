@@ -20,6 +20,7 @@
       <a href="#pari">Radio telescopes</a>
       <a href="#cern">CERN</a>
       <a href="#emri">EMRIs</a>
+      <a href="#astrophotography">Astrophotography</a>
       <a href="#about">About</a>
       <a href="mailto:isabellecoughlin@gmail.com">Email</a>
     </nav>
@@ -158,17 +159,62 @@
     <section class="about-section" id="about">
       <div class="page-width">
         <div class="about-grid">
-          <div><p class="kicker">OUTSIDE RESEARCH</p><h2>How I got into astrophotography</h2></div>
-          <div><p>Taking pictures of the night sky was one of my first ways into astronomy. At PARI, I got to work with archival astronomical plates and, as a camp counselor, help students explore astronomy and get to know the radio telescopes. I still like having a reason to spend time outside—whether that’s a stargazing night, a hike, or a day on the river.</p><p class="about-links"><a href="mailto:isabellecoughlin@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a></p></div>
+          <div><p class="kicker">OUTSIDE RESEARCH</p><h2>At PARI and outdoors</h2></div>
+          <div>
+            <p>Some of the experiences that first brought me into astronomy were at PARI: working with archival plates and helping campers explore the radio telescopes. I also spend a lot of time outside, especially hiking and paddling.</p>
+            <p class="about-links"><a href="mailto:isabellecoughlin@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a></p>
+          </div>
         </div>
         <div class="personal-gallery">
-          <figure><img src="assets/site/astrophotography-night-sky.webp" alt="A night-sky photograph taken by Isabelle"><figcaption>One of my night-sky photos.</figcaption></figure>
           <figure><img src="assets/site/pari-astronomical-plate.webp" alt="An archival astronomical photographic plate from PARI"><figcaption>An astronomical plate at PARI.</figcaption></figure>
-          <figure><img src="assets/site/pari-camp-counselors.webp" alt="A group at PARI's summer astronomy camp"><figcaption>PARI summer camp.</figcaption></figure>
+          <figure><img src="assets/site/pari-camp-counselors.webp" alt="PARI summer camp counselors"><figcaption>Summer camp at PARI.</figcaption></figure>
           <figure><img src="assets/site/outdoors-red-rocks.webp" alt="Isabelle hiking among red rock formations"><figcaption>Hiking in the red rocks.</figcaption></figure>
           <figure><img src="assets/site/outdoors-kayaking.webp" alt="Isabelle on a whitewater kayaking trip"><figcaption>On the river with Outdoor Pursuits.</figcaption></figure>
         </div>
       </div>
+    </section>
+
+    <section class="astrophotography-section page-width" id="astrophotography">
+      <div class="astro-heading">
+        <div><p class="kicker">ASTROPHOTOGRAPHY</p><h2>Night skies</h2></div>
+        <p>A few of my night-sky photos. Click the image or use the arrows to browse.</p>
+      </div>
+      <figure class="astro-carousel" aria-label="Astrophotography photo gallery">
+        <button class="astro-image-button" type="button" aria-label="Show next astrophotography photo">
+          <img class="astro-image" src="assets/site/astrophotography-01.webp" alt="A star field photographed by Isabelle">
+        </button>
+        <figcaption class="astro-caption">Star field <span class="astro-count" aria-live="polite">1 / 5</span></figcaption>
+        <div class="astro-controls">
+          <button type="button" class="astro-prev" aria-label="Show previous astrophotography photo">←</button>
+          <button type="button" class="astro-next" aria-label="Show next astrophotography photo">→</button>
+        </div>
+      </figure>
+      <script>
+        (() => {
+          const photos = [
+            { src: "assets/site/astrophotography-01.webp", alt: "A star field photographed by Isabelle", caption: "Star field" },
+            { src: "assets/site/astrophotography-02.webp", alt: "Stars photographed above a dark landscape", caption: "Night sky" },
+            { src: "assets/site/astrophotography-03.webp", alt: "A view of the Milky Way photographed by Isabelle", caption: "Milky Way" },
+            { src: "assets/site/astrophotography-04.webp", alt: "Stars photographed on a clear night", caption: "Night sky" },
+            { src: "assets/site/astrophotography-05.webp", alt: "Stars above trees photographed by Isabelle", caption: "Stars above the trees" }
+          ];
+          const gallery = document.querySelector(".astro-carousel");
+          const image = gallery.querySelector(".astro-image");
+          const caption = gallery.querySelector(".astro-caption");
+          const count = gallery.querySelector(".astro-count");
+          let current = 0;
+          function show(step) {
+            current = (current + step + photos.length) % photos.length;
+            image.src = photos[current].src;
+            image.alt = photos[current].alt;
+            caption.firstChild.textContent = photos[current].caption + " ";
+            count.textContent = `${current + 1} / ${photos.length}`;
+          }
+          gallery.querySelector(".astro-image-button").addEventListener("click", () => show(1));
+          gallery.querySelector(".astro-prev").addEventListener("click", () => show(-1));
+          gallery.querySelector(".astro-next").addEventListener("click", () => show(1));
+        })();
+      </script>
     </section>
   </main>
   <footer class="page-width site-footer"><span>Isabelle Coughlin</span><span>Wake Forest University · Expected May 2027</span><a href="#top">Back to the top ↑</a></footer>
