@@ -16,10 +16,11 @@
   <header class="site-header">
     <a class="wordmark" href="#top">Isabelle Coughlin</a>
     <nav aria-label="Main navigation">
-      <a href="#black-holes">Black-hole project</a>
+      <a href="#black-holes">Black holes</a>
       <a href="#pari">Radio telescopes</a>
       <a href="#cern">CERN</a>
-      <a href="#about">A little more</a>
+      <a href="#emri">EMRIs</a>
+      <a href="#about">About</a>
       <a href="mailto:isabellecoughlin@gmail.com">Email</a>
     </nav>
   </header>
@@ -28,29 +29,28 @@
     <section class="hero page-width" id="top">
       <div class="hero-copy">
         <p class="hello">Hi, I’m Isabelle.</p>
-        <h1>I work on black holes, telescope data, and the code that connects them.</h1>
-        <p class="intro">I’m a physics and math student at Wake Forest. Right now I’m studying how a black hole’s accretion disk changes the X-rays we see. I also like being close to the instruments: at PARI, I wrote software to scan radio sources with a 26-meter dish.</p>
-        <p class="intro intro-small">Most of my projects have taken me between the physics, the code, and the measurement.</p>
-        <div class="hero-links"><a class="link-arrow" href="#black-holes">See what I’m working on <span aria-hidden="true">↓</span></a><a class="plain-link" href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="plain-link" href="https://github.com/IsabelleCoughlin" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <h1>I study black holes with X-ray data.</h1>
+        <p class="intro">I’m a physics and mathematics student at Wake Forest. My current project looks at how an accretion disk’s thickness changes the X-rays we use to estimate black-hole properties. I’ve also worked on radio-telescope software, gravitational-wave models, and machine learning for particle physics.</p>
+        <div class="hero-links"><a class="link-arrow" href="#black-holes">Research and projects <span aria-hidden="true">↓</span></a><a class="plain-link" href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="plain-link" href="https://github.com/IsabelleCoughlin" target="_blank" rel="noreferrer">GitHub ↗</a></div>
         <p class="school-note">Wake Forest University · Physics with Honors, Mathematics, Computer Science · Class of 2027</p>
       </div>
       <figure class="hero-photo">
         <img src="assets/site/pari-26m-telescope.webp" alt="Isabelle standing below the 26-meter radio telescope at PARI">
-        <figcaption>At 26-East at the Pisgah Astronomical Research Institute. It really is that big.</figcaption>
+        <figcaption>At PARI’s 26-East radio telescope.</figcaption>
       </figure>
     </section>
 
     <section class="current-project section-rule page-width" id="black-holes">
       <p class="kicker">WHAT I’M WORKING ON NOW</p>
-      <h2>Black-hole disks have height.<br>Our models often leave it out.</h2>
+      <h2>How disk thickness affects X-ray reflection fits</h2>
       <div class="project-lede">
-        <p>Many models of X-ray reflection assume the accretion disk is paper-thin. At higher accretion rates, the disk can puff up. Its inner wall can block the corona’s light from reaching the outer disk, and the near side can hide part of the inner edge from us.</p>
-        <p>My project asks a practical question: if the real disk is thick, what happens when we fit its spectrum with a thin-disk model?</p>
+        <p>Many X-ray reflection models assume the accretion disk is geometrically thin. At higher accretion rates, the disk can become thick enough to block some of the corona’s light from reaching its outer regions. From certain viewing angles, the near side can also hide part of the inner disk.</p>
+        <p>I’m testing how those geometric effects change the spectrum—and whether fitting a thick-disk spectrum with a thin-disk model biases the inferred black-hole parameters.</p>
       </div>
 
       <figure class="wide-figure map-figure">
         <img src="assets/site/fenrir-ray-traced-map.webp" alt="Ray-traced intensity map of a thick accretion disk around a black hole, with the far side shadowed and the inner edge partly obscured">
-        <figcaption><strong>A view from FENRIR.</strong> This ray-traced intensity map combines the disk illumination with the energy shifts of photons reaching the observer. For this example, the inner disk is partly hidden from view, and the disk’s height blocks illumination from reaching some outer radii. Geometry: spin 0, accretion-rate proxy 0.3, corona height 3 gravitational radii, inclination 60°.</figcaption>
+        <figcaption><strong>Ray-traced intensity map.</strong> FENRIR combines the disk illumination with the energy shifts of photons reaching the observer. Here, the inner disk is partly hidden and the disk blocks illumination from reaching some outer radii. Geometry: spin 0, accretion-rate proxy 0.3, corona height 3 gravitational radii, inclination 60°.</figcaption>
       </figure>
 
       <div class="two-figures">
@@ -65,7 +65,7 @@
       </div>
 
       <div class="research-details">
-        <div class="detail-heading"><p class="kicker">HOW I TEST IT</p><h3>Follow the photons, then fit the spectrum.</h3></div>
+        <div class="detail-heading"><p class="kicker">METHOD</p><h3>Relativistic ray tracing and spectral fits</h3></div>
         <div class="detail-copy">
           <p>I use <a href="https://arxiv.org/abs/1712.05418" target="_blank" rel="noreferrer">FENRIR</a>, a general-relativistic ray-tracing framework, to follow photons from a lamp-post corona down to the disk and then from the disk to a distant observer. Those calculations give me the disk’s illumination profile and the relativistic energy shifts that shape the reflection spectrum.</p>
           <p>I combine those outputs with local reflection spectra and fit the resulting data in XSPEC. A lot of my work has gone into understanding FENRIR and building an independently checked local model that I can use in the fitting pipeline. For individual cases I explore the parameter posterior with MCMC. Across larger grids, I fit repeated Poisson realizations with C-statistic minimization and multiple starting points.</p>
@@ -80,7 +80,7 @@
         </figure>
         <div class="result-copy">
           <p class="kicker">WHAT THE FITS ARE TELLING ME</p>
-          <h3>A fit can look acceptable and still point to the wrong parameters.</h3>
+          <h3>Thin-disk fits can hide parameter bias.</h3>
           <p>That is the tricky case: the model may match the data well enough while returning a biased spin or viewing angle. In other geometries, the thin model leaves structured residuals or pushes a parameter against a fit boundary. Those cases make the mismatch easier to spot.</p>
           <p>I’m also testing whether future high-resolution instruments could distinguish the two geometries. In one 50 ks Athena X-IFU simulation, the thick-disk model follows the mock spectrum around the Fe-K line while the thin-disk fit leaves a clear residual pattern.</p>
         </div>
@@ -93,7 +93,7 @@
     </section>
 
     <section class="project-section page-width" id="pari">
-      <div class="section-title-row"><div><p class="kicker">A PROJECT THAT STARTED AT THE TELESCOPE</p><h2>I wrote code to scan the sky.</h2></div><p class="side-note">Pisgah Astronomical Research Institute · Summer 2025</p></div>
+      <div class="section-title-row"><div><p class="kicker">PISGAH ASTRONOMICAL RESEARCH INSTITUTE</p><h2>Automating radio-telescope scans</h2></div><p class="side-note">Summer 2025</p></div>
       <div class="pari-intro">
         <p>PARI’s 26-meter dishes are old, powerful instruments with several software layers between a person and the telescope. I wrote programs that could send a telescope through a grid of positions around a radio source, log the measurements, and turn them into a map.</p>
         <p>I started with SDRAngel’s API, then built a second route that communicated more directly with the telescope’s DFM control software. That pivot came from watching the first version move: it could overshoot when it changed direction, and gear backlash made the pointing less consistent than I wanted.</p>
@@ -111,14 +111,14 @@
 
     <section class="project-section cern-section" id="cern">
       <div class="page-width">
-        <div class="section-title-row"><div><p class="kicker">A DIFFERENT KIND OF SIGNAL</p><h2>At CERN, I tried to teach a model what a jet looks like.</h2></div><p class="side-note">University of Geneva & CERN · Spring 2026</p></div>
+        <div class="section-title-row"><div><p class="kicker">UNIVERSITY OF GENEVA & CERN</p><h2>Normalizing flows for calorimeter data</h2></div><p class="side-note">Spring 2026</p></div>
         <div class="cern-intro">
           <p>During my semester in Geneva, I worked with Dr. Ioannis Xiotidis on a machine-learning question for high-energy physics: can a normalizing flow learn the background patterns in calorimeter data well enough to flag unusual events?</p>
           <p>The data look like six stacked detector images. Each event has 19,200 cells, and most cells are empty. I built a rational-quadratic spline flow with a U-Net conditioner, then compared generated samples and likelihood-based anomaly scores against background and simulated di-Higgs events.</p>
         </div>
         <div class="cern-visuals">
           <figure><img src="assets/site/calorimeter-events.webp" alt="Sparse calorimeter events and generated events with reconstructed jets marked on each image"><figcaption><strong>Calorimeter events.</strong> The left column shows validation events; the right shows samples from the trained model. The colored cells record deposited energy, and circles mark reconstructed jets.</figcaption></figure>
-          <figure><img src="assets/site/anomaly-score-roc.webp" alt="ROC curves for likelihood-based anomaly scores on background and di-Higgs simulated samples, showing limited separation"><figcaption><strong>Good samples did not mean a useful anomaly score.</strong> The flow learned several energy distributions, but the likelihood score separated signal from background only weakly. The di-Higgs tests had AUC values around 0.63–0.65.</figcaption></figure>
+          <figure><img src="assets/site/anomaly-score-roc.webp" alt="ROC curves for likelihood-based anomaly scores on background and di-Higgs simulated samples, showing limited separation"><figcaption><strong>The likelihood score separated signal and background only weakly.</strong> The flow learned several energy distributions, but the di-Higgs tests had AUC values around 0.63–0.65.</figcaption></figure>
         </div>
         <div class="cern-details">
           <p>The surprise was how much the empty cells mattered. Depending on the detector layer, 95–99.7% of the electromagnetic calorimeter cells contained no energy. A little noise added during preprocessing made the data continuous enough for the flow, but the event-level likelihood then paid attention to thousands of noisy cells for every localized shower.</p>
@@ -127,18 +127,34 @@
       </div>
     </section>
 
+    <section class="project-section page-width emri-section" id="emri">
+      <div class="section-title-row"><div><p class="kicker">WAVEFORM MODELING</p><h2>Modeling extreme mass-ratio inspirals</h2></div><p class="side-note">Wake Forest · 2025</p></div>
+      <div class="pari-intro">
+        <p>EMRIs happen when a stellar-mass object spirals into a much larger black hole. I built a Python pipeline to study how the orbit and gravitational-wave signal evolve, starting with Peters’ leading-order equations and then adding a 2.5 post-Newtonian model from Barack and Cutler.</p>
+        <p>I used the same analysis steps for both models—orbital evolution, harmonic decomposition, characteristic strain, and signal-to-noise ratio—so I could compare their predictions with published figures and with waveforms from FEW and the Black Hole Perturbation Toolkit.</p>
+      </div>
+      <figure class="emri-figure">
+        <img src="assets/site/emri-strain-comparison.webp" alt="Four plots comparing published characteristic-strain curves for eccentric inspirals with reproductions calculated using leading-order Peters equations">
+        <figcaption><strong>Reproducing characteristic-strain curves.</strong> The left plots are from Amaro-Seoane (2019); the right plots are my reconstructions using Peters equations. The figure compares two initial eccentricities. Matching the curves required a square-root dependence on the eccentricity-dependent harmonic function, consistent with Finn and Thorne (2000).</figcaption>
+      </figure>
+      <div class="emri-details">
+        <div><h3>Comparing orbital models</h3><p>The 2.5PN model reproduced the expected orbital and frequency–eccentricity evolution. But when I ran it through the same signal-to-noise pipeline, it produced higher SNR curves than the published comparison. That pointed to a difference in the harmonic approximation and gave me a concrete question to investigate.</p></div>
+        <div><h3>Making the analysis reusable</h3><p>I organized the work into a modular Python package, separating orbital models, numerical integration, harmonic functions, strain calculations, and SNR estimates. The same downstream analysis can then be applied to Peters, 2.5PN, and FEW-generated trajectories.</p><p class="emri-limit">The report captures work in progress: the SNR calculation still used coarse time sampling, and high-eccentricity integrations could become numerically stiff. Evolving backward from the last stable orbit helped with some of those cases.</p></div>
+      </div>
+      <p class="emri-link"><a href="https://github.com/IsabelleCoughlin/EMRIs/tree/main/emri" target="_blank" rel="noreferrer">View the EMRI code on GitHub ↗</a></p>
+    </section>
+
     <section class="other-work page-width">
-      <div><p class="kicker">OTHER QUESTIONS I’VE WORKED ON</p><h2>From inspirals to neutron stars.</h2></div>
+      <div><p class="kicker">ANOTHER PROJECT</p><h2>Rotating neutron stars</h2></div>
       <div class="other-list">
-        <article><h3>Extreme mass-ratio inspirals</h3><p>I wrote Python tools to evolve orbital parameters and compare waveforms using post-Newtonian equations and the Black Hole Perturbation Toolkit.</p><span>Wake Forest · Fall 2025</span></article>
-        <article><h3>Rotating neutron stars</h3><p>I used Julia to solve the TOV equations, reconstruct rotating-star models, and plot their mass–radius relationships.</p><span>Wake Forest · Spring 2025</span></article>
+        <article><h3>Stellar structure with Julia</h3><p>I used Julia to solve the TOV equations, reconstruct rotating-star models, and plot their mass–radius relationships.</p><span>Wake Forest · Spring 2025</span></article>
       </div>
     </section>
 
     <section class="about-section" id="about">
       <div class="page-width about-grid">
-        <div><p class="kicker">OUTSIDE THE CODE</p><h2>I like sharing the things I’m excited about.</h2></div>
-        <div><p>At PARI, I got to be both a researcher and a camp counselor. Seeing students take control of a radio telescope for the first time made me want to keep creating those moments. At Wake Forest, I tutor physics, lead whitewater kayaking and stargazing trips through Outdoor Pursuits, and serve as president of the Society of Physics Students.</p><p>When I’m away from the lab, I’m usually outside, running, or looking for a good excuse to get people out under the stars.</p><p class="about-links"><a href="mailto:isabellecoughlin@gmail.com">Send me an email ↗</a><a href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a></p></div>
+        <div><p class="kicker">TEACHING & OUTREACH</p><h2>Teaching, outreach, and outdoor leadership</h2></div>
+        <div><p>At PARI, I worked as both a researcher and camp counselor. At Wake Forest, I tutor physics, lead whitewater kayaking and stargazing trips through Outdoor Pursuits, and serve as president of the Society of Physics Students. I like making science approachable and helping people try things for the first time, whether that means using a telescope or getting out on the river.</p><p>Outside school, I’m usually running or spending time outdoors.</p><p class="about-links"><a href="mailto:isabellecoughlin@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a></p></div>
       </div>
     </section>
   </main>
