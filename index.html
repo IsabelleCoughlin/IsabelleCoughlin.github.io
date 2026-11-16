@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5f0">
-  <meta name="description" content="Isabelle Coughlin studies black-hole accretion, X-ray reflection spectroscopy, and computational astrophysics at Wake Forest University.">
-  <title>Isabelle Coughlin | Physics, Astrophysics & Computation</title>
+  <meta name="theme-color" content="#f8f6f1">
+  <meta name="description" content="Isabelle Coughlin is a physics and mathematics student at Wake Forest University interested in black-hole astrophysics and gravitational waves.">
+  <title>Isabelle Coughlin | Physics Student</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
@@ -16,179 +16,152 @@
   <header class="site-header">
     <a class="wordmark" href="#top">Isabelle Coughlin</a>
     <nav aria-label="Main navigation">
-      <a href="#black-holes">Black holes</a>
-      <a href="#pari">Radio telescopes</a>
-      <a href="#cern">CERN</a>
-      <a href="#emri">EMRIs</a>
+      <a href="#research">Research experience</a>
+      <a href="#work">Work</a>
+      <a href="#community">Community</a>
       <a href="#astrophotography">Astrophotography</a>
-      <a href="#about">About</a>
-      <a href="mailto:isabellecoughlin@gmail.com">Email</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero page-width" id="top">
       <div class="hero-copy">
-        <p class="hello">Hi, I’m Isabelle.</p>
-        <h1>I study black holes with X-ray data.</h1>
-        <p class="intro">I’m a physics and mathematics student at Wake Forest. My current project looks at how an accretion disk’s thickness changes the X-rays we use to estimate black-hole properties. I’ve also worked on radio-telescope software, gravitational-wave models, and machine learning for particle physics.</p>
-        <div class="hero-links"><a class="link-arrow" href="#black-holes">Research and projects <span aria-hidden="true">↓</span></a><a class="plain-link" href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="plain-link" href="https://github.com/IsabelleCoughlin" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-        <p class="school-note">Wake Forest University · Physics with Honors, Mathematics, Computer Science · Class of 2027</p>
+        <p class="school-note">Wake Forest University · Class of 2027</p>
+        <h1>Hi, I’m Isabelle.</h1>
+        <p class="hero-role">Physics and mathematics student, with a minor in computer science.</p>
+        <p class="intro">I plan to pursue a Ph.D. in physics and study extreme astrophysical systems by combining electromagnetic observations with gravitational-wave data. I’m especially interested in what X-ray observations of accreting black holes can tell us about gravity.</p>
+        <div class="hero-links">
+          <a class="button-link" href="#research">Research experience <span aria-hidden="true">↓</span></a>
+          <a class="button-link secondary" href="#work">Work</a>
+          <a class="button-link secondary" href="#community">Community</a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:isabellecoughlin@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/IsabelleCoughlin" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
       <figure class="hero-photo">
-        <img src="assets/site/pari-26m-telescope.webp" alt="Isabelle standing below the 26-meter radio telescope at PARI">
-        <figcaption>At PARI’s 26-East radio telescope.</figcaption>
+        <img src="assets/site/pari-control-room.webp" alt="Isabelle seated at the telescope controls in the PARI control room">
+        <figcaption>At the PARI telescope controls.</figcaption>
       </figure>
     </section>
 
-    <section class="current-project section-rule page-width" id="black-holes">
-      <p class="kicker">WHAT I’M WORKING ON NOW</p>
-      <h2>How disk thickness affects X-ray reflection fits</h2>
-      <div class="project-lede">
-        <p>Many X-ray reflection models assume the accretion disk is geometrically thin. At higher accretion rates, the disk can become thick enough to block some of the corona’s light from reaching its outer regions. From certain viewing angles, the near side can also hide part of the inner disk.</p>
-        <p>I’m testing how those geometric effects change the spectrum—and whether fitting a thick-disk spectrum with a thin-disk model biases the inferred black-hole parameters.</p>
+    <section class="section page-width" id="research">
+      <div class="section-heading">
+        <p class="kicker">SELECTED PROJECTS</p>
+        <h2>Research experience</h2>
+        <p class="section-intro">My projects have taken me from radio telescopes to particle-physics data and black-hole models.</p>
       </div>
 
-      <figure class="wide-figure map-figure">
-        <img src="assets/site/fenrir-ray-traced-map.webp" alt="Ray-traced intensity map of a thick accretion disk around a black hole, with the far side shadowed and the inner edge partly obscured">
-        <figcaption><strong>Ray-traced intensity map.</strong> FENRIR combines the disk illumination with the energy shifts of photons reaching the observer. Here, the inner disk is partly hidden and the disk blocks illumination from reaching some outer radii. Geometry: spin 0, accretion-rate proxy 0.3, corona height 3 gravitational radii, inclination 60°.</figcaption>
-      </figure>
-
-      <div class="two-figures">
-        <figure class="motion-figure">
-          <video src="assets/site/disk-self-shadowing.mp4" autoplay muted loop playsinline controls poster="assets/site/fenrir-ray-traced-map.webp" aria-label="Animation showing a thick disk shadowing its outer radii from illumination"></video>
-          <figcaption><strong>Self-shadowing.</strong> As the inner disk gets taller, it casts a shadow over more of the outer disk. The effect matters most when the corona sits low above the black hole.</figcaption>
-        </figure>
-        <figure class="motion-figure">
-          <video src="assets/site/inner-disk-obscuration.mp4" autoplay muted loop playsinline controls aria-label="Animation showing the inner edge of a thick disk disappearing as the viewing angle changes"></video>
-          <figcaption><strong>Inner-disk obscuration.</strong> At higher viewing angles, the raised near side of the disk can hide the inner corner from our line of sight.</figcaption>
-        </figure>
-      </div>
-
-      <div class="research-details">
-        <div class="detail-heading"><p class="kicker">METHOD</p><h3>Relativistic ray tracing and spectral fits</h3></div>
-        <div class="detail-copy">
-          <p>I use <a href="https://arxiv.org/abs/1712.05418" target="_blank" rel="noreferrer">FENRIR</a>, a general-relativistic ray-tracing framework, to follow photons from a lamp-post corona down to the disk and then from the disk to a distant observer. Those calculations give me the disk’s illumination profile and the relativistic energy shifts that shape the reflection spectrum.</p>
-          <p>I combine those outputs with local reflection spectra and fit the resulting data in XSPEC. A lot of my work has gone into understanding FENRIR and building an independently checked local model that I can use in the fitting pipeline. For individual cases I explore the parameter posterior with MCMC. Across larger grids, I fit repeated Poisson realizations with C-statistic minimization and multiple starting points.</p>
-          <p class="tool-note">In the models I’ve tested, the thin-disk fits often recover lower spin, inclination, and coronal height as the injected disk gets thicker. The size and even the direction of the effect depend on geometry, so I’m mapping it case by case.</p>
+      <article class="experience xray-project">
+        <div class="experience-heading">
+          <div><h3>Finite-thickness accretion disks</h3><p class="organization">Wake Forest University · Summer 2026–present</p></div>
+          <span class="field-tag">Astrophysics</span>
         </div>
-      </div>
-
-      <div class="result-pair">
-        <figure class="result-figure">
-          <img src="assets/site/thin-disk-recovery.webp" alt="MCMC corner plot showing thin-disk parameter recovery shifting as the injected disk thickness increases">
-          <figcaption><strong>One example, not a universal trend.</strong> In this MCMC run, the injected geometry has spin 0.9, corona height 3 gravitational radii, and inclination 15°. As the disk thickness increases, the thin-disk fit moves toward lower recovered spin, height, and inclination.</figcaption>
-        </figure>
-        <div class="result-copy">
-          <p class="kicker">WHAT THE FITS ARE TELLING ME</p>
-          <h3>Thin-disk fits can hide parameter bias.</h3>
-          <p>That is the tricky case: the model may match the data well enough while returning a biased spin or viewing angle. In other geometries, the thin model leaves structured residuals or pushes a parameter against a fit boundary. Those cases make the mismatch easier to spot.</p>
-          <p>I’m also testing whether future high-resolution instruments could distinguish the two geometries. In one 50 ks Athena X-IFU simulation, the thick-disk model follows the mock spectrum around the Fe-K line while the thin-disk fit leaves a clear residual pattern.</p>
+        <p>I use relativistic ray tracing and X-ray spectral fits to study how disk thickness changes the spectra used to estimate black-hole properties. I’m measuring when thin-disk models bias parameters such as spin, inclination, and coronal height.</p>
+        <div class="science-figures">
+          <figure><img src="assets/site/fenrir-ray-traced-map.webp" alt="Ray-traced image of a thick accretion disk around a black hole"><figcaption>Ray tracing shows which parts of a thick disk are illuminated and visible.</figcaption></figure>
+          <figure><img src="assets/site/athena-xifu-spectrum.webp" alt="Simulated Athena X-IFU spectrum comparing thin-disk and thick-disk fits"><figcaption>In this simulated Athena observation, the thick-disk fit follows Fe-K structure more closely.</figcaption></figure>
         </div>
+        <p class="collaborators">With Dr. Alejandro Cárdenas-Avendaño, Dr. Javier García, and Dr. Joanna Piotrowska-Karpov. Manuscript in preparation.</p>
+      </article>
+
+      <article class="experience">
+        <div class="experience-heading">
+          <div><h3>Normalizing flows for calorimeter data</h3><p class="organization">University of Geneva & CERN · Spring 2026</p></div>
+          <span class="field-tag">Particle physics</span>
+        </div>
+        <p>I tested normalizing flows and cylindrical convolutional autoencoders on sparse HL-LHC calorimeter data, comparing generated events and anomaly scores for background and simulated di-Higgs events.</p>
+        <div class="science-figures">
+          <figure><img src="assets/site/calorimeter-events.webp" alt="Calorimeter event images alongside events generated by a normalizing flow"><figcaption>Calorimeter events and samples from the trained model.</figcaption></figure>
+          <figure><img src="assets/site/anomaly-score-roc.webp" alt="ROC curves measuring separation between background and simulated di-Higgs events"><figcaption>Likelihood scores separated signal and background only weakly.</figcaption></figure>
+        </div>
+        <p class="collaborators">Advised by Dr. Ioannis Xiotidis.</p>
+      </article>
+
+      <article class="experience">
+        <div class="experience-heading">
+          <div><h3>Automating radio-telescope scans</h3><p class="organization">Pisgah Astronomical Research Institute · Summer 2025</p></div>
+          <span class="field-tag">Radio astronomy</span>
+        </div>
+        <p>I wrote Python programs to automate raster scans with PARI’s 26-meter radio telescopes and map radio sources. Students later used the scanning tools to observe a pulsar and analyze its signal.</p>
+        <figure class="single-science-figure"><img src="assets/site/virgo-a-raster.webp" alt="Radio map of Virgo A made from an 11 by 11 telescope raster scan"><figcaption>An 11 × 11 raster scan of Virgo A from the 26-East telescope.</figcaption></figure>
+      </article>
+
+      <div class="two-experiences">
+        <article class="experience compact-experience">
+          <div class="experience-heading"><div><h3>Extreme mass-ratio inspirals</h3><p class="organization">Wake Forest University · Fall 2025</p></div></div>
+          <p>I built Python tools to evolve inspiral orbits and compare gravitational-wave predictions from Peters’ equations and a 2.5 post-Newtonian model.</p>
+          <figure class="small-science-figure"><img src="assets/site/emri-strain-comparison.webp" alt="Comparison of published and reproduced characteristic-strain curves for eccentric inspirals"><figcaption>Reproducing characteristic-strain curves from the literature.</figcaption></figure>
+          <a class="text-link" href="https://github.com/IsabelleCoughlin/EMRIs/tree/main/emri" target="_blank" rel="noreferrer">EMRI code on GitHub ↗</a>
+        </article>
+        <article class="experience compact-experience">
+          <div class="experience-heading"><div><h3>Rotating neutron stars</h3><p class="organization">Wake Forest University · Spring 2025</p></div></div>
+          <p>With Dr. Cook, I used Julia to solve the TOV equations, reconstruct rotating-star models, and plot mass–radius relationships.</p>
+        </article>
       </div>
-      <figure class="wide-figure spectrum-figure">
-        <img src="assets/site/athena-xifu-spectrum.webp" alt="Simulated Athena X-IFU spectrum comparing the input data with thin-disk and thick-disk fits, with residuals below">
-        <figcaption><strong>A simulated Athena X-IFU observation.</strong> The thin-disk fit misses structure around the Fe-K line; the thick-disk fit follows the simulated spectrum more closely. This is a forecast with simulated data, not an observation of a real source.</figcaption>
-      </figure>
-      <p class="collaborator-note">This work is with Dr. Alejandro Cárdenas-Avendaño at Wake Forest, with collaborators Dr. Javier García and Dr. Joanna Piotrowska-Karpov. A manuscript is in preparation.</p>
     </section>
 
-    <section class="project-section page-width" id="pari">
-      <div class="section-title-row"><div><p class="kicker">PISGAH ASTRONOMICAL RESEARCH INSTITUTE</p><h2>Automating radio-telescope scans</h2></div><p class="side-note">Summer 2025</p></div>
-      <div class="pari-intro">
-        <p>PARI’s 26-meter dishes are old, powerful instruments with several software layers between a person and the telescope. I wrote programs that could send a telescope through a grid of positions around a radio source, log the measurements, and turn them into a map.</p>
-        <p>I started with SDRAngel’s API, then built a second route that communicated more directly with the telescope’s DFM control software. That pivot came from watching the first version move: it could overshoot when it changed direction, and gear backlash made the pointing less consistent than I wanted.</p>
-      </div>
-      <div class="pari-gallery">
-        <figure class="pari-photo"><img src="assets/site/pari-control-room.webp" alt="Isabelle at the PARI telescope control room during her research internship"><figcaption>In the control room, where the scan software talks to the telescope and the radio receiver.</figcaption></figure>
-        <figure class="pari-map"><img src="assets/site/virgo-a-raster.webp" alt="A heat map of a raster scan of the radio galaxy Virgo A using PARI's 26-East telescope"><figcaption>One 11 × 11 raster of Virgo A from 26-East. Each square is a measurement; the brighter cells show the strongest received signal.</figcaption></figure>
-      </div>
-      <div class="pari-details">
-        <p>The SDRAngel program supports serpentine, spherical, and daisy scan patterns, and lets the operator choose the grid size, spacing, and coordinate system. A typical S-band grid used 0.09° spacing. A scan took about five minutes, which made it practical for students and guests to use.</p>
-        <p>The DFM version sent commands more directly through a Python socket connection. It took closer to 30 minutes per scan, and I only had time to test it twice, so those results were preliminary. The first version produced more scans, but the offsets did not show a clear pattern that would support a pointing model. The likely culprit was mechanical backlash, especially when the software reversed direction.</p>
-        <p>One of my favorite moments came later, when high-school campers used the SDRAngel code to find evidence of a pulsar and analyze its intensity. I got to show them the radio data and help them work through what they were seeing.</p>
-      </div>
-    </section>
-
-    <section class="project-section cern-section" id="cern">
+    <section class="section tinted-section" id="work">
       <div class="page-width">
-        <div class="section-title-row"><div><p class="kicker">UNIVERSITY OF GENEVA & CERN</p><h2>Normalizing flows for calorimeter data</h2></div><p class="side-note">Spring 2026</p></div>
-        <div class="cern-intro">
-          <p>During my semester in Geneva, I worked with Dr. Ioannis Xiotidis on a machine-learning question for high-energy physics: can a normalizing flow learn the background patterns in calorimeter data well enough to flag unusual events?</p>
-          <p>The data look like six stacked detector images. Each event has 19,200 cells, and most cells are empty. I built a rational-quadratic spline flow with a U-Net conditioner, then compared generated samples and likelihood-based anomaly scores against background and simulated di-Higgs events.</p>
+        <div class="section-heading">
+          <p class="kicker">WORK & CAMPUS ROLES</p>
+          <h2>Work</h2>
         </div>
-        <div class="cern-photos">
-          <figure><img src="assets/site/cern-cms-visit.webp" alt="Isabelle visiting the CMS experiment at CERN"><figcaption>At the CMS experiment during my semester in Geneva.</figcaption></figure>
-          <figure><img src="assets/site/cern-route-einstein.webp" alt="Isabelle pointing to Route Albert Einstein at CERN"><figcaption>Route Albert Einstein, CERN.</figcaption></figure>
-        </div>
-        <div class="cern-visuals">
-          <figure><img src="assets/site/calorimeter-events.webp" alt="Sparse calorimeter events and generated events with reconstructed jets marked on each image"><figcaption><strong>Calorimeter events.</strong> The left column shows validation events; the right shows samples from the trained model. The colored cells record deposited energy, and circles mark reconstructed jets.</figcaption></figure>
-          <figure><img src="assets/site/anomaly-score-roc.webp" alt="ROC curves for likelihood-based anomaly scores on background and di-Higgs simulated samples, showing limited separation"><figcaption><strong>The likelihood score separated signal and background only weakly.</strong> The flow learned several energy distributions, but the di-Higgs tests had AUC values around 0.63–0.65.</figcaption></figure>
-        </div>
-        <div class="cern-details">
-          <p>The surprise was how much the empty cells mattered. Depending on the detector layer, 95–99.7% of the electromagnetic calorimeter cells contained no energy. A little noise added during preprocessing made the data continuous enough for the flow, but the event-level likelihood then paid attention to thousands of noisy cells for every localized shower.</p>
-          <p>So the model could reproduce broad energy distributions while its anomaly score was mostly measuring occupancy and preprocessing noise. The lesson I took away was that generation quality and anomaly-detection quality are different questions. A more useful model may need to learn where energy appears separately from how much energy each active cell carries.</p>
+        <article class="experience work-experience">
+          <div class="experience-heading"><div><h3>Engineering Intern</h3><p class="organization">Goldfinch Sensor Technologies and Analytics · Spring & Summer 2025</p></div></div>
+          <p>I built Python and image-analysis workflows for automated detection and supported machine-learning projects in medical imaging, beef-fat segmentation, satellite imagery, and burn-severity analysis. I also trained staff to use image-segmentation tools for a USDA-funded project.</p>
+        </article>
+        <div class="two-experiences">
+          <article class="experience work-experience">
+            <div class="experience-heading"><div><h3>Physics Tutor</h3><p class="organization">Wake Forest University</p></div></div>
+            <p>I work one-on-one with students on physics coursework and problem-solving.</p>
+          </article>
+          <article class="experience work-experience">
+            <div class="experience-heading"><div><h3>Trip Leader</h3><p class="organization">Wake Forest Outdoor Pursuits</p></div></div>
+            <p>I lead beginner whitewater trips and stargazing outings for students.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="project-section page-width emri-section" id="emri">
-      <div class="section-title-row"><div><p class="kicker">WAVEFORM MODELING</p><h2>Modeling extreme mass-ratio inspirals</h2></div><p class="side-note">Wake Forest · 2025</p></div>
-      <div class="pari-intro">
-        <p>EMRIs happen when a stellar-mass object spirals into a much larger black hole. I built a Python pipeline to study how the orbit and gravitational-wave signal evolve, starting with Peters’ leading-order equations and then adding a 2.5 post-Newtonian model from Barack and Cutler.</p>
-        <p>I used the same analysis steps for both models—orbital evolution, harmonic decomposition, characteristic strain, and signal-to-noise ratio—so I could compare their predictions with published figures and with waveforms from FEW and the Black Hole Perturbation Toolkit.</p>
+    <section class="section page-width" id="community">
+      <div class="section-heading">
+        <p class="kicker">CAMPUS & OUTREACH</p>
+        <h2>Community engagement</h2>
       </div>
-      <figure class="emri-figure">
-        <img src="assets/site/emri-strain-comparison.webp" alt="Four plots comparing published characteristic-strain curves for eccentric inspirals with reproductions calculated using leading-order Peters equations">
-        <figcaption><strong>Reproducing characteristic-strain curves.</strong> The left plots are from Amaro-Seoane (2019); the right plots are my reconstructions using Peters equations. The figure compares two initial eccentricities. Matching the curves required a square-root dependence on the eccentricity-dependent harmonic function, consistent with Finn and Thorne (2000).</figcaption>
-      </figure>
-      <div class="emri-details">
-        <div><h3>Comparing orbital models</h3><p>The 2.5PN model reproduced the expected orbital and frequency–eccentricity evolution. But when I ran it through the same signal-to-noise pipeline, it produced higher SNR curves than the published comparison. That pointed to a difference in the harmonic approximation and gave me a concrete question to investigate.</p></div>
-        <div><h3>Making the analysis reusable</h3><p>I organized the work into a modular Python package, separating orbital models, numerical integration, harmonic functions, strain calculations, and SNR estimates. The same downstream analysis can then be applied to Peters, 2.5PN, and FEW-generated trajectories.</p><p class="emri-limit">The report captures work in progress: the SNR calculation still used coarse time sampling, and high-eccentricity integrations could become numerically stiff. Evolving backward from the last stable orbit helped with some of those cases.</p></div>
+      <div class="community-list">
+        <article class="community-item"><h3>Society of Physics Students</h3><p class="organization">President · Wake Forest University</p><p>I organize events for physics students and help plan stargazing and astronomy outreach.</p></article>
+        <article class="community-item"><h3>Alpha Phi Omega</h3><p class="organization">Wake Forest University</p><p>Service and volunteer activities through the campus chapter.</p></article>
+        <article class="community-item"><h3>PARI Summer Camp</h3><p class="organization">Camp counselor · Summers 2024–2025</p><p>I taught astronomy activities and supervised middle- and high-school campers during overnight sessions.</p></article>
       </div>
-      <p class="emri-link"><a href="https://github.com/IsabelleCoughlin/EMRIs/tree/main/emri" target="_blank" rel="noreferrer">View the EMRI code on GitHub ↗</a></p>
-    </section>
-
-    <section class="other-work page-width">
-      <div><p class="kicker">ANOTHER PROJECT</p><h2>Rotating neutron stars</h2></div>
-      <div class="other-list">
-        <article><h3>Stellar structure with Julia</h3><p>I used Julia to solve the TOV equations, reconstruct rotating-star models, and plot their mass–radius relationships.</p><span>Wake Forest · Spring 2025</span></article>
+      <div class="community-photos">
+        <figure><img src="assets/site/pari-camp-counselors.webp" alt="PARI summer camp counselors"><figcaption>Summer camp at PARI.</figcaption></figure>
+        <figure><img src="assets/site/pari-astronomical-plate.webp" alt="An archival astronomical photographic plate at PARI"><figcaption>An archival plate from the PARI collection.</figcaption></figure>
+        <figure><img src="assets/site/outdoors-red-rocks.webp" alt="Isabelle on a hike among red rock formations"><figcaption>Hiking in the red rocks.</figcaption></figure>
+        <figure><img src="assets/site/outdoors-kayaking.webp" alt="Isabelle on a whitewater kayaking trip"><figcaption>On the river with Outdoor Pursuits.</figcaption></figure>
       </div>
     </section>
 
-    <section class="about-section" id="about">
+    <section class="astro-section" id="astrophotography">
       <div class="page-width">
-        <div class="about-grid">
-          <div><p class="kicker">OUTSIDE RESEARCH</p><h2>At PARI and outdoors</h2></div>
-          <div>
-            <p>Some of the experiences that first brought me into astronomy were at PARI: working with archival plates and helping campers explore the radio telescopes. I also spend a lot of time outside, especially hiking and paddling.</p>
-            <p class="about-links"><a href="mailto:isabellecoughlin@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/isabelle-coughlin-142b19126/" target="_blank" rel="noreferrer">LinkedIn ↗</a></p>
+        <div class="section-heading">
+          <p class="kicker">ASTROPHOTOGRAPHY</p>
+          <h2>Night skies</h2>
+          <p class="section-intro">Click the photo or use the arrows to see the rest.</p>
+        </div>
+        <figure class="astro-carousel" aria-label="Astrophotography photo gallery">
+          <button class="astro-image-button" type="button" aria-label="Show next astrophotography photo">
+            <img class="astro-image" src="assets/site/astrophotography-01.webp" alt="A star field photographed by Isabelle">
+          </button>
+          <figcaption class="astro-caption"><span class="astro-title">Star field</span><span class="astro-count" aria-live="polite">1 / 5</span></figcaption>
+          <div class="astro-controls">
+            <button type="button" class="astro-prev" aria-label="Show previous astrophotography photo">←</button>
+            <button type="button" class="astro-next" aria-label="Show next astrophotography photo">→</button>
           </div>
-        </div>
-        <div class="personal-gallery">
-          <figure><img src="assets/site/pari-astronomical-plate.webp" alt="An archival astronomical photographic plate from PARI"><figcaption>An astronomical plate at PARI.</figcaption></figure>
-          <figure><img src="assets/site/pari-camp-counselors.webp" alt="PARI summer camp counselors"><figcaption>Summer camp at PARI.</figcaption></figure>
-          <figure><img src="assets/site/outdoors-red-rocks.webp" alt="Isabelle hiking among red rock formations"><figcaption>Hiking in the red rocks.</figcaption></figure>
-          <figure><img src="assets/site/outdoors-kayaking.webp" alt="Isabelle on a whitewater kayaking trip"><figcaption>On the river with Outdoor Pursuits.</figcaption></figure>
-        </div>
+        </figure>
       </div>
-    </section>
-
-    <section class="astrophotography-section page-width" id="astrophotography">
-      <div class="astro-heading">
-        <div><p class="kicker">ASTROPHOTOGRAPHY</p><h2>Night skies</h2></div>
-        <p>A few of my night-sky photos. Click the image or use the arrows to browse.</p>
-      </div>
-      <figure class="astro-carousel" aria-label="Astrophotography photo gallery">
-        <button class="astro-image-button" type="button" aria-label="Show next astrophotography photo">
-          <img class="astro-image" src="assets/site/astrophotography-01.webp" alt="A star field photographed by Isabelle">
-        </button>
-        <figcaption class="astro-caption">Star field <span class="astro-count" aria-live="polite">1 / 5</span></figcaption>
-        <div class="astro-controls">
-          <button type="button" class="astro-prev" aria-label="Show previous astrophotography photo">←</button>
-          <button type="button" class="astro-next" aria-label="Show next astrophotography photo">→</button>
-        </div>
-      </figure>
       <script>
         (() => {
           const photos = [
@@ -200,14 +173,14 @@
           ];
           const gallery = document.querySelector(".astro-carousel");
           const image = gallery.querySelector(".astro-image");
-          const caption = gallery.querySelector(".astro-caption");
+          const title = gallery.querySelector(".astro-title");
           const count = gallery.querySelector(".astro-count");
           let current = 0;
           function show(step) {
             current = (current + step + photos.length) % photos.length;
             image.src = photos[current].src;
             image.alt = photos[current].alt;
-            caption.firstChild.textContent = photos[current].caption + " ";
+            title.textContent = photos[current].caption;
             count.textContent = `${current + 1} / ${photos.length}`;
           }
           gallery.querySelector(".astro-image-button").addEventListener("click", () => show(1));
@@ -217,6 +190,7 @@
       </script>
     </section>
   </main>
-  <footer class="page-width site-footer"><span>Isabelle Coughlin</span><span>Wake Forest University · Expected May 2027</span><a href="#top">Back to the top ↑</a></footer>
+
+  <footer class="site-footer page-width"><span>Isabelle Coughlin</span><span>Wake Forest University · Expected May 2027</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
