@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f6f1">
-  <meta name="description" content="Isabelle Coughlin is a physics and mathematics student at Wake Forest University interested in black-hole astrophysics and gravitational waves.">
+  <meta name="description" content="Isabelle Coughlin is a physics and mathematics student at Wake Forest University. Her research spans black-hole astrophysics, gravitational waves, particle physics, and radio astronomy.">
   <title>Isabelle Coughlin | Physics Student</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,9 @@
   <header class="site-header">
     <a class="wordmark" href="#top">Isabelle Coughlin</a>
     <nav aria-label="Main navigation">
-      <a href="#research">Research experience</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
       <a href="#work">Work</a>
       <a href="#community">Community</a>
       <a href="#astrophotography">Astrophotography</a>
@@ -32,8 +34,8 @@
         <p class="intro">I plan to pursue a Ph.D. in physics and study extreme astrophysical systems by combining electromagnetic observations with gravitational-wave data. I’m especially interested in what X-ray observations of accreting black holes can tell us about gravity.</p>
         <div class="hero-links">
           <a class="button-link" href="#research">Research experience <span aria-hidden="true">↓</span></a>
+          <a class="button-link secondary" href="#education">Education</a>
           <a class="button-link secondary" href="#work">Work</a>
-          <a class="button-link secondary" href="#community">Community</a>
         </div>
         <div class="contact-links">
           <a href="mailto:isabellecoughlin@gmail.com">Email</a>
@@ -51,86 +53,129 @@
       <div class="section-heading">
         <p class="kicker">SELECTED PROJECTS</p>
         <h2>Research experience</h2>
-        <p class="section-intro">My projects have taken me from radio telescopes to particle-physics data and black-hole models.</p>
+        <p class="section-intro">Research in X-ray astrophysics, particle physics, radio astronomy, and gravitational-wave modeling.</p>
       </div>
 
-      <article class="experience xray-project">
-        <div class="experience-heading">
-          <div><h3>Finite-thickness accretion disks</h3><p class="organization">Wake Forest University · Summer 2026–present</p></div>
-          <span class="field-tag">Astrophysics</span>
+      <article class="research-project" id="xray-project">
+        <div class="project-copy">
+          <p class="project-index">01 · X-RAY ASTROPHYSICS</p>
+          <h3>Finite-thickness accretion disks</h3>
+          <p class="organization">Wake Forest University · 2026–present</p>
+          <p>My current project with Dr. Alejandro Cárdenas-Avendaño and Dr. Javier García at NASA Goddard Space Flight Center asks whether neglecting disk thickness in X-ray reflection spectroscopy can lead to underestimates of black-hole spin and coronal height. Earlier work with FENRIR, a relativistic ray-tracing suite for thick accretion disks, suggested this could happen, but the effect had not been measured across a broad set of systems and observations.</p>
+          <p>I reproduced prior results, established numerical convergence, compared FENRIR with established thin-disk models, and built an independent validation copy of the code. I then simulated thick-disk spectra and fit them with thin-disk models using Markov chain Monte Carlo sampling. Across repeated trials, the recovered values support underestimation of spin and coronal height. I also found a bias in disk inclination and traced it to relativistic effects in highly inclined disks.</p>
+          <p class="project-outcome">I am preparing a first-author paper on the causes and scale of these biases and their implications for future observing missions, with submission planned for this winter.</p>
         </div>
-        <p>I use relativistic ray tracing and X-ray spectral fits to study how disk thickness changes the spectra used to estimate black-hole properties. I’m measuring when thin-disk models bias parameters such as spin, inclination, and coronal height.</p>
-        <div class="science-figures">
-          <figure><img src="assets/site/fenrir-ray-traced-map.webp" alt="Ray-traced image of a thick accretion disk around a black hole"><figcaption>Ray tracing shows which parts of a thick disk are illuminated and visible.</figcaption></figure>
-          <figure><img src="assets/site/athena-xifu-spectrum.webp" alt="Simulated Athena X-IFU spectrum comparing thin-disk and thick-disk fits"><figcaption>In this simulated Athena observation, the thick-disk fit follows Fe-K structure more closely.</figcaption></figure>
+        <div class="project-visuals">
+          <figure><img src="assets/research/fenrir-disk-geometry.webp" alt="Diagram comparing thick and thin accretion disks around a black hole, with an X-ray emitting corona above the disk"><figcaption>Thick and thin disk geometries around a black hole, with the X-ray emitting corona shown above the disk.</figcaption></figure>
         </div>
-        <p class="collaborators">With Dr. Alejandro Cárdenas-Avendaño, Dr. Javier García, and Dr. Joanna Piotrowska-Karpov. Manuscript in preparation.</p>
       </article>
 
-      <article class="experience">
-        <div class="experience-heading">
-          <div><h3>Normalizing flows for calorimeter data</h3><p class="organization">University of Geneva & CERN · Spring 2026</p></div>
-          <span class="field-tag">Particle physics</span>
+      <article class="research-project reverse" id="cern-project">
+        <div class="project-copy">
+          <p class="project-index">02 · PARTICLE PHYSICS</p>
+          <h3>Generative models for ATLAS calorimeter data</h3>
+          <p class="organization">University of Geneva & CERN · Spring 2026</p>
+          <p>During a semester abroad at the University of Geneva, I worked with Dr. Ioannis Xiotidis at CERN to test whether normalizing flows could act as model-independent anomaly detectors for ATLAS calorimeter data. The ATLAS trigger system must select events in real time from roughly 1.7 billion proton collisions per second; unusual events can be discarded before they are stored for analysis.</p>
+          <p>I trained flows to learn the spatial and energy distributions of background events and tested whether high negative log-likelihood scores could flag anomalies. After evaluating several architectures, I implemented a rational-quadratic spline coupling flow that reproduced per-layer energy distributions and jet structure. Its likelihood scores did not separate signal from background, but the model showed promise as a fast generator of low-energy background events: under one second per event compared with about 35 seconds for the Monte Carlo simulation.</p>
+          <p class="project-outcome">After I presented the work to the Next Generation Trigger group, a graduate student adopted the generative-model approach. I shared my code and documentation with the group.</p>
         </div>
-        <p>I tested normalizing flows and cylindrical convolutional autoencoders on sparse HL-LHC calorimeter data, comparing generated events and anomaly scores for background and simulated di-Higgs events.</p>
-        <div class="science-figures">
-          <figure><img src="assets/site/calorimeter-events.webp" alt="Calorimeter event images alongside events generated by a normalizing flow"><figcaption>Calorimeter events and samples from the trained model.</figcaption></figure>
-          <figure><img src="assets/site/anomaly-score-roc.webp" alt="ROC curves measuring separation between background and simulated di-Higgs events"><figcaption>Likelihood scores separated signal and background only weakly.</figcaption></figure>
+        <div class="project-visuals">
+          <figure><img src="assets/research/cern-generated-event.webp" alt="ATLAS calorimeter event display with reconstructed jet regions marked"><figcaption>An ATLAS calorimeter event display with jet regions marked. The model learned the energy and spatial structure of background events.</figcaption></figure>
         </div>
-        <p class="collaborators">Advised by Dr. Ioannis Xiotidis.</p>
       </article>
 
-      <article class="experience">
-        <div class="experience-heading">
-          <div><h3>Automating radio-telescope scans</h3><p class="organization">Pisgah Astronomical Research Institute · Summer 2025</p></div>
-          <span class="field-tag">Radio astronomy</span>
+      <article class="research-project" id="pari-radio-project">
+        <div class="project-copy">
+          <p class="project-index">03 · RADIO ASTRONOMY</p>
+          <h3>Automating 26-meter radio-telescope scans</h3>
+          <p class="organization">Pisgah Astronomical Research Institute · Summer 2025</p>
+          <p>At PARI, I operated the 26-meter radio telescopes and developed software to automate raster scans. The work connected DFM Engineering’s telescope controls with Python and SDRAngel, coordinating motor encoders, pointing commands, and Hamlib interpreters. I first used SDRAngel’s REST API to run scans in different shapes and coordinate systems.</p>
+          <p>Analysis of a circular Virgo A scan showed inconsistent position offsets that made pointing-model fits unreliable. The control system overshot and corrected position commands, while gear backlash added noise when telescope motion reversed. I redesigned the pipeline to send Python socket commands directly to the DFM control software, more closely matching manual operation and reducing overshoot. Scans take about 20 times longer with this method, but the position data are smoother and more useful for fitting pointing models.</p>
+          <p class="project-outcome">Radio-telescope timing and signal analysis are also relevant to pulsar timing arrays, which use signals observed across widely separated observatories to probe low-frequency gravitational waves.</p>
         </div>
-        <p>I wrote Python programs to automate raster scans with PARI’s 26-meter radio telescopes and map radio sources. Students later used the scanning tools to observe a pulsar and analyze its signal.</p>
-        <figure class="single-science-figure"><img src="assets/site/virgo-a-raster.webp" alt="Radio map of Virgo A made from an 11 by 11 telescope raster scan"><figcaption>An 11 × 11 raster scan of Virgo A from the 26-East telescope.</figcaption></figure>
+        <div class="project-visuals stacked-visuals">
+          <figure><img src="assets/research/pari-telescope-system.webp" alt="Software and hardware architecture for PARI's 26-meter DFM radio telescopes"><figcaption>Control and data flow connecting telescope hardware, rotator control, SDR, and user software.</figcaption></figure>
+          <figure><img src="assets/research/pari-virgo-scan.webp" alt="Virgo A radio scan showing received power over time and a two-dimensional azimuth-elevation power map"><figcaption>Virgo A observation with the 26-East feed on July 8, 2025: received power over time (left) and the resulting azimuth–elevation map (right).</figcaption></figure>
+        </div>
       </article>
 
-      <div class="two-experiences">
-        <article class="experience compact-experience">
-          <div class="experience-heading"><div><h3>Extreme mass-ratio inspirals</h3><p class="organization">Wake Forest University · Fall 2025</p></div></div>
-          <p>I built Python tools to evolve inspiral orbits and compare gravitational-wave predictions from Peters’ equations and a 2.5 post-Newtonian model.</p>
-          <figure class="small-science-figure"><img src="assets/site/emri-strain-comparison.webp" alt="Comparison of published and reproduced characteristic-strain curves for eccentric inspirals"><figcaption>Reproducing characteristic-strain curves from the literature.</figcaption></figure>
+      <article class="research-project reverse" id="emri-project">
+        <div class="project-copy">
+          <p class="project-index">04 · GRAVITATIONAL WAVES</p>
+          <h3>Extreme mass-ratio inspirals</h3>
+          <p class="organization">Wake Forest University · Fall 2025</p>
+          <p>With Dr. Alejandro Cárdenas-Avendaño’s group, I reproduced signal-to-noise estimates for extreme mass-ratio inspirals (EMRIs), a target source for the future LISA mission. I built a modular Python package that evolves orbits with increasingly detailed approximations, from Peters–Mathews equations through 2.5 post-Newtonian equations.</p>
+          <p>I compared the resulting waveforms with calculations from the Black Hole Perturbation Toolkit and reproduced characteristic-strain plots from the literature. The project provides a consistent pipeline for comparing how orbital approximations affect predicted EMRI signals.</p>
           <a class="text-link" href="https://github.com/IsabelleCoughlin/EMRIs/tree/main/emri" target="_blank" rel="noreferrer">EMRI code on GitHub ↗</a>
+        </div>
+        <div class="project-visuals">
+          <figure><img src="assets/research/emri-strain.webp" alt="Characteristic strain versus frequency for an inspiral, with several orbital approximations compared"><figcaption>Example characteristic-strain curves reproduced with an orbital approximation. The curves show the predicted signal across frequency.</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="research-project" id="neutron-star-project">
+        <div class="project-copy">
+          <p class="project-index">05 · COMPACT OBJECTS</p>
+          <h3>Neutron-star structure and equations of state</h3>
+          <p class="organization">Independent study with Dr. Gordon Cook · Spring 2025</p>
+          <p>Modeling a neutron star requires an equation of state (EOS) for nuclear matter. A polytropic EOS gives a useful analytic approximation, while tabulated EOS represent different theoretical descriptions of matter at nuclear density. In an independent study with Dr. Cook, I worked with Julia tools for neutron-star structure and with tabulated EOS data.</p>
+          <p>I used code to convert individual ASCII EOS tables into a single HDF5 file for use in modeling. The public <a href="https://github.com/cookgb/Neutron_Star_EOS.git" target="_blank" rel="noreferrer">Neutron_Star_EOS collection</a> includes tables used in ApJ 424 (1994); the <a href="https://github.com/cookgb/RotNS_Julia" target="_blank" rel="noreferrer">RotNS_Julia code</a> is available on GitHub. <a href="https://compose.obspm.fr/home/" target="_blank" rel="noreferrer">CompOSE</a> is a modern source for tabulated EOS, including cold neutron-star matter.</p>
+        </div>
+        <div class="project-visuals workflow-wrap">
+          <div class="eos-workflow" role="img" aria-label="Illustration of converting tabulated nuclear equations of state from ASCII tables into an HDF5 file for neutron-star modeling">
+            <div class="workflow-step"><span>Input</span><strong>Tabulated EOS</strong><small>ASCII data</small></div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span>Convert</span><strong>Julia tools</strong><small>HDF5 output</small></div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span>Use</span><strong>Star models</strong><small>TOV & rotation</small></div>
+          </div>
+          <p class="workflow-caption">From tabulated nuclear matter to EOS files used in neutron-star structure calculations.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section education-section" id="education">
+      <div class="page-width">
+        <div class="section-heading"><p class="kicker">EDUCATION</p><h2>Education</h2></div>
+        <article class="education-card">
+          <div><h3>Wake Forest University</h3><p class="organization">Winston-Salem, North Carolina · Expected May 2027</p></div>
+          <div class="degree-list">
+            <p><strong>B.S. in Physics</strong>, with honors</p>
+            <p><strong>B.A. in Mathematics</strong></p>
+            <p>Minor in Computer Science</p>
+          </div>
+          <div class="education-note"><p><strong>Study abroad:</strong> University of Geneva, Spring 2026</p><p>Coursework included astroparticle physics and Electricity & Magnetism II.</p></div>
         </article>
-        <article class="experience compact-experience">
-          <div class="experience-heading"><div><h3>Rotating neutron stars</h3><p class="organization">Wake Forest University · Spring 2025</p></div></div>
-          <p>With Dr. Cook, I used Julia to solve the TOV equations, reconstruct rotating-star models, and plot mass–radius relationships.</p>
-        </article>
+      </div>
+    </section>
+
+    <section class="section page-width" id="awards">
+      <div class="section-heading"><p class="kicker">RECOGNITION</p><h2>Awards</h2></div>
+      <div class="award-list">
+        <article class="award-item"><h3>Wake Forest Scholars Summer Enrichment Funds</h3><p>Two awards totaling $10,000 · Summer 2025 and Summer 2026</p></article>
+        <article class="award-item"><h3>O.W. Wilson Full-Tuition Scholarship</h3><p>Wake Forest University · 2023–present</p></article>
+        <article class="award-item"><h3>Thomas E. and Ruth Mullen Scholar of the Guy T. Carswell Scholarship</h3><p>Wake Forest University · 2024–present</p></article>
+        <article class="award-item"><h3>Omicron Delta Kappa National Leadership Honor Society</h3><p>Inducted 2026</p></article>
+        <article class="award-item"><h3>Goldwater Scholarship</h3><p>Nominated by Wake Forest University · 2025</p></article>
       </div>
     </section>
 
     <section class="section tinted-section" id="work">
       <div class="page-width">
-        <div class="section-heading">
-          <p class="kicker">WORK & CAMPUS ROLES</p>
-          <h2>Work</h2>
-        </div>
+        <div class="section-heading"><p class="kicker">WORK & CAMPUS ROLES</p><h2>Work</h2></div>
         <article class="experience work-experience">
           <div class="experience-heading"><div><h3>Engineering Intern</h3><p class="organization">Goldfinch Sensor Technologies and Analytics · Spring & Summer 2025</p></div></div>
           <p>I built Python and image-analysis workflows for automated detection and supported machine-learning projects in medical imaging, beef-fat segmentation, satellite imagery, and burn-severity analysis. I also trained staff to use image-segmentation tools for a USDA-funded project.</p>
         </article>
         <div class="two-experiences">
-          <article class="experience work-experience">
-            <div class="experience-heading"><div><h3>Physics Tutor</h3><p class="organization">Wake Forest University</p></div></div>
-            <p>I work one-on-one with students on physics coursework and problem-solving.</p>
-          </article>
-          <article class="experience work-experience">
-            <div class="experience-heading"><div><h3>Trip Leader</h3><p class="organization">Wake Forest Outdoor Pursuits</p></div></div>
-            <p>I lead beginner whitewater trips and stargazing outings for students.</p>
-          </article>
+          <article class="experience work-experience"><div class="experience-heading"><div><h3>Physics Tutor</h3><p class="organization">Wake Forest University</p></div></div><p>I work one-on-one with students on physics coursework and problem-solving.</p></article>
+          <article class="experience work-experience"><div class="experience-heading"><div><h3>Trip Leader</h3><p class="organization">Wake Forest Outdoor Pursuits</p></div></div><p>I lead beginner whitewater trips and stargazing outings for students.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section page-width" id="community">
-      <div class="section-heading">
-        <p class="kicker">CAMPUS & OUTREACH</p>
-        <h2>Community engagement</h2>
-      </div>
+      <div class="section-heading"><p class="kicker">CAMPUS & OUTREACH</p><h2>Community engagement</h2></div>
       <div class="community-list">
         <article class="community-item"><h3>Society of Physics Students</h3><p class="organization">President · Wake Forest University</p><p>I organize events for physics students and help plan stargazing and astronomy outreach.</p></article>
         <article class="community-item"><h3>Alpha Phi Omega</h3><p class="organization">Wake Forest University</p><p>Service and volunteer activities through the campus chapter.</p></article>
@@ -146,20 +191,11 @@
 
     <section class="astro-section" id="astrophotography">
       <div class="page-width">
-        <div class="section-heading">
-          <p class="kicker">ASTROPHOTOGRAPHY</p>
-          <h2>Night skies</h2>
-          <p class="section-intro">Click the photo or use the arrows to see the rest.</p>
-        </div>
+        <div class="section-heading"><p class="kicker">ASTROPHOTOGRAPHY</p><h2>Night skies</h2><p class="section-intro">Click the photo or use the arrows to see the rest.</p></div>
         <figure class="astro-carousel" aria-label="Astrophotography photo gallery">
-          <button class="astro-image-button" type="button" aria-label="Show next astrophotography photo">
-            <img class="astro-image" src="assets/site/astrophotography-01.webp" alt="A star field photographed by Isabelle">
-          </button>
+          <button class="astro-image-button" type="button" aria-label="Show next astrophotography photo"><img class="astro-image" src="assets/site/astrophotography-01.webp" alt="A star field photographed by Isabelle"></button>
           <figcaption class="astro-caption"><span class="astro-title">Star field</span><span class="astro-count" aria-live="polite">1 / 5</span></figcaption>
-          <div class="astro-controls">
-            <button type="button" class="astro-prev" aria-label="Show previous astrophotography photo">←</button>
-            <button type="button" class="astro-next" aria-label="Show next astrophotography photo">→</button>
-          </div>
+          <div class="astro-controls"><button type="button" class="astro-prev" aria-label="Show previous astrophotography photo">←</button><button type="button" class="astro-next" aria-label="Show next astrophotography photo">→</button></div>
         </figure>
       </div>
       <script>
@@ -190,7 +226,6 @@
       </script>
     </section>
   </main>
-
   <footer class="site-footer page-width"><span>Isabelle Coughlin</span><span>Wake Forest University · Expected May 2027</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
